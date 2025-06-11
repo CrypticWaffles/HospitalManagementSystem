@@ -33,7 +33,7 @@ namespace HospitalManager
         public LoginForm(StartForm form)
         {
             InitializeComponent();
-            InitializeDatabase();
+            InitializeUserDatabase();
             startPage = form;
         }
 
@@ -70,7 +70,7 @@ namespace HospitalManager
         }
 
         // Initializes the MongoDB database connection and retrieves the users collection.
-        public void InitializeDatabase()
+        public void InitializeUserDatabase()
         {
             // Get connectionstring from app config
             var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;

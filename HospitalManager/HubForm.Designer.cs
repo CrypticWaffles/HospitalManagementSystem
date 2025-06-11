@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_hi = new System.Windows.Forms.Label();
             this.btn_chat = new System.Windows.Forms.Button();
             this.btn_analytics = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lbl_hi
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(289, 187);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Hi!";
+            this.lbl_hi.AutoSize = true;
+            this.lbl_hi.Location = new System.Drawing.Point(12, 9);
+            this.lbl_hi.Name = "lbl_hi";
+            this.lbl_hi.Size = new System.Drawing.Size(28, 20);
+            this.lbl_hi.TabIndex = 0;
+            this.lbl_hi.Text = "Hi!";
             // 
             // btn_chat
             // 
@@ -69,7 +69,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btn_analytics);
             this.Controls.Add(this.btn_chat);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_hi);
             this.Name = "HubForm";
             this.Text = "Hub";
             this.ResumeLayout(false);
@@ -79,7 +79,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_hi;
         private System.Windows.Forms.Button btn_chat;
         private System.Windows.Forms.Button btn_analytics;
     }
