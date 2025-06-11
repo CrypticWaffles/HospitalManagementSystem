@@ -1,0 +1,45 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.pdb
+*.obj
+*.exe
+*.dll
+*.aps
+*.bsc
+*.fxcop
+*.buildlog
+*.log
+*.ncb
+*.res
+*.sbr
+*.tlb
+*.tlh
+*.tmp
+*.bak
+*.cache
+*.vcproj.filters
+*.vcxproj.user
+*.safetensors
+*.mdf
+*.ldf
+*.docstates
+
+# NuGet
+packages/
+*.nupkg
+
+# Rider
+.idea/
+
+# Binaries
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+
+# Miscellaneous
+Thumbs.db
+ehthumbs.db
+Desktop.ini
