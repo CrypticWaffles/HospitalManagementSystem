@@ -30,6 +30,7 @@ namespace HospitalManager
             var filter = Builders<User>.Filter.Eq("username", "admin");
             currentUser = usersCollection.Find(filter).FirstOrDefault();
             lbl_hi.Text = $"Logged in as: {currentUser.Username}.";
+            PatientRegistration();
         }
 
         public HubForm(User user)
@@ -38,6 +39,7 @@ namespace HospitalManager
             InitializeUserDatabase();
             currentUser = user;
             lbl_hi.Text = $"Logged in as: {currentUser.Username}.";
+            PatientRegistration();
         }
 
         private void btn_chat_Click(object sender, EventArgs e)
@@ -66,6 +68,14 @@ namespace HospitalManager
 
             // Get collection
             usersCollection = database.GetCollection<User>("users");
+        }
+
+        public void PatientRegistration()
+        {
+            if (currentUser.Role == "Patient" && currentUser.Registered == false)
+            {
+                MessageBox.Show("Please register as a patient before proceeding.", "Registration Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

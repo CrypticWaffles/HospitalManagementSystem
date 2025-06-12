@@ -1,45 +1,22 @@
 [{
   "_id": {
-    "$oid": "6848d319bf220468e7eb4591"
+    "$oid": "684b28284d4255b8cb419039"
+  },
+  "username": "patient2",
+  "password": "ptest",
+  "email": "patient@hospital.com",
+  "role": "Patient",
+  "registered": false,
+  "patientID": 0
+},
+{
+  "_id": {
+    "$oid": "684b307cdb6716afab0a22dc"
   },
   "username": "admin",
   "password": "atest",
   "email": "admin@hospital.com",
-  "role": "Admin"
-},
-{
-  "_id": {
-    "$oid": "6848ddf9f77626d904066085"
-  },
-  "username": "patient",
-  "password": "ptest",
-  "email": "patient@hospital.com",
-  "role": "Patient"
-},
-{
-  "_id": {
-    "$oid": "6848de6f17416594e480865c"
-  },
-  "username": "nurse",
-  "password": "ntest",
-  "email": "nurse@hospital.com",
-  "role": "Nurse"
-},
-{
-  "_id": {
-    "$oid": "6848deddf66bf244bed78095"
-  },
-  "username": "staff",
-  "password": "stest",
-  "email": "staff@hospital.com",
-  "role": "Staff"
-},
-{
-  "_id": {
-    "$oid": "6848df2adf618c1767113253"
-  },
-  "username": "doctor",
-  "password": "dtest",
-  "email": "doc@hospital.com",
-  "role": "Doctor"
+  "role": "Admin",
+  "registered": false,
+  "patientID": 0
 }]
