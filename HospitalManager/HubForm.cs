@@ -67,5 +67,12 @@ namespace HospitalManager
             // Get collection
             usersCollection = database.GetCollection<User>("users");
         }
+
+        private void button_patientRecords_Click(object sender, EventArgs e)
+        {
+            PatientRecords mainForm = new PatientRecords();
+            mainForm.Show();
+            this.Hide();
+        }
     }
 }

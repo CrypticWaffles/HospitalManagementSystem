@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView_medicalHistory = new System.Windows.Forms.DataGridView();
+            this.medicalHistoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hospitalManagerDataSet = new HospitalManager.HospitalManagerDataSet();
             this.textBox_recordDate = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button_back = new System.Windows.Forms.Button();
@@ -44,34 +45,37 @@
             this.textBox_notes = new System.Windows.Forms.TextBox();
             this.textBox_treatment = new System.Windows.Forms.TextBox();
             this.textBox_diagnosis = new System.Windows.Forms.TextBox();
-            this.hospitalManagerDataSet = new HospitalManager.HospitalManagerDataSet();
-            this.medicalHistoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.medicalHistoriesTableAdapter = new HospitalManager.HospitalManagerDataSetTableAdapters.MedicalHistoriesTableAdapter();
+            this.button_clear = new System.Windows.Forms.Button();
+            this.dataGridView_medicalHistory = new System.Windows.Forms.DataGridView();
+            this.historyIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recordDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.recordDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diagnosisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.treatmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_medicalHistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet)).BeginInit();
+            //this.hospitalManagerDataSet2 = new HospitalManager.HospitalManagerDataSet2();
+            this.medicalHistoriesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            //this.medicalHistoriesTableAdapter1 = new HospitalManager.HospitalManagerDataSet2TableAdapters.MedicalHistoriesTableAdapter();
+            this.medicalHistoriesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.medicalHistoriesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_medicalHistory)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicalHistoriesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicalHistoriesBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView_medicalHistory
+            // medicalHistoriesBindingSource
             // 
-            this.dataGridView_medicalHistory.AutoGenerateColumns = false;
-            this.dataGridView_medicalHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_medicalHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.recordDateDataGridViewTextBoxColumn,
-            this.diagnosisDataGridViewTextBoxColumn,
-            this.treatmentDataGridViewTextBoxColumn,
-            this.notesDataGridViewTextBoxColumn});
-            this.dataGridView_medicalHistory.DataSource = this.medicalHistoriesBindingSource;
-            this.dataGridView_medicalHistory.Location = new System.Drawing.Point(43, 78);
-            this.dataGridView_medicalHistory.Name = "dataGridView_medicalHistory";
-            this.dataGridView_medicalHistory.RowHeadersWidth = 62;
-            this.dataGridView_medicalHistory.RowTemplate.Height = 28;
-            this.dataGridView_medicalHistory.Size = new System.Drawing.Size(713, 277);
-            this.dataGridView_medicalHistory.TabIndex = 0;
+            this.medicalHistoriesBindingSource.DataMember = "MedicalHistories";
+            this.medicalHistoriesBindingSource.DataSource = this.hospitalManagerDataSet;
+            // 
+            // hospitalManagerDataSet
+            // 
+            this.hospitalManagerDataSet.DataSetName = "HospitalManagerDataSet";
+            this.hospitalManagerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBox_recordDate
             // 
@@ -97,6 +101,7 @@
             this.button_back.TabIndex = 24;
             this.button_back.Text = "Back";
             this.button_back.UseVisualStyleBackColor = true;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
             // button_edit
             // 
@@ -106,6 +111,7 @@
             this.button_edit.TabIndex = 23;
             this.button_edit.Text = "Edit";
             this.button_edit.UseVisualStyleBackColor = true;
+            this.button_edit.Click += new System.EventHandler(this.button_edit_Click);
             // 
             // button_add
             // 
@@ -115,6 +121,7 @@
             this.button_add.TabIndex = 22;
             this.button_add.Text = "Add";
             this.button_add.UseVisualStyleBackColor = true;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
             // button_search
             // 
@@ -124,6 +131,7 @@
             this.button_search.TabIndex = 21;
             this.button_search.Text = "Search";
             this.button_search.UseVisualStyleBackColor = true;
+            this.button_search.Click += new System.EventHandler(this.button_search_Click);
             // 
             // button_delete
             // 
@@ -133,11 +141,12 @@
             this.button_delete.TabIndex = 20;
             this.button_delete.Text = "Delete";
             this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // label_patientName
             // 
             this.label_patientName.AutoSize = true;
-            this.label_patientName.Location = new System.Drawing.Point(368, 31);
+            this.label_patientName.Location = new System.Drawing.Point(302, 26);
             this.label_patientName.Name = "label_patientName";
             this.label_patientName.Size = new System.Drawing.Size(21, 20);
             this.label_patientName.TabIndex = 25;
@@ -191,19 +200,88 @@
             this.textBox_diagnosis.Size = new System.Drawing.Size(338, 26);
             this.textBox_diagnosis.TabIndex = 31;
             // 
-            // hospitalManagerDataSet
-            // 
-            this.hospitalManagerDataSet.DataSetName = "HospitalManagerDataSet";
-            this.hospitalManagerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // medicalHistoriesBindingSource
-            // 
-            this.medicalHistoriesBindingSource.DataMember = "MedicalHistories";
-            this.medicalHistoriesBindingSource.DataSource = this.hospitalManagerDataSet;
-            // 
             // medicalHistoriesTableAdapter
             // 
             this.medicalHistoriesTableAdapter.ClearBeforeFill = true;
+            // 
+            // button_clear
+            // 
+            this.button_clear.Location = new System.Drawing.Point(574, 485);
+            this.button_clear.Name = "button_clear";
+            this.button_clear.Size = new System.Drawing.Size(83, 33);
+            this.button_clear.TabIndex = 32;
+            this.button_clear.Text = "Clear";
+            this.button_clear.UseVisualStyleBackColor = true;
+            this.button_clear.Click += new System.EventHandler(this.button_clear_Click_1);
+            // 
+            // dataGridView_medicalHistory
+            // 
+            this.dataGridView_medicalHistory.AutoGenerateColumns = false;
+            this.dataGridView_medicalHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_medicalHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.historyIdDataGridViewTextBoxColumn,
+            this.patientIdDataGridViewTextBoxColumn,
+            this.recordDateDataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dataGridView_medicalHistory.DataSource = this.medicalHistoriesBindingSource2;
+            this.dataGridView_medicalHistory.Location = new System.Drawing.Point(43, 78);
+            this.dataGridView_medicalHistory.Name = "dataGridView_medicalHistory";
+            this.dataGridView_medicalHistory.RowHeadersWidth = 62;
+            this.dataGridView_medicalHistory.RowTemplate.Height = 28;
+            this.dataGridView_medicalHistory.Size = new System.Drawing.Size(713, 277);
+            this.dataGridView_medicalHistory.TabIndex = 0;
+            this.dataGridView_medicalHistory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_medicalHistory_CellContentClick);
+            // 
+            // historyIdDataGridViewTextBoxColumn
+            // 
+            this.historyIdDataGridViewTextBoxColumn.DataPropertyName = "HistoryId";
+            this.historyIdDataGridViewTextBoxColumn.HeaderText = "HistoryId";
+            this.historyIdDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.historyIdDataGridViewTextBoxColumn.Name = "historyIdDataGridViewTextBoxColumn";
+            this.historyIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.historyIdDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // patientIdDataGridViewTextBoxColumn
+            // 
+            this.patientIdDataGridViewTextBoxColumn.DataPropertyName = "PatientId";
+            this.patientIdDataGridViewTextBoxColumn.HeaderText = "PatientId";
+            this.patientIdDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.patientIdDataGridViewTextBoxColumn.Name = "patientIdDataGridViewTextBoxColumn";
+            this.patientIdDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // recordDateDataGridViewTextBoxColumn1
+            // 
+            this.recordDateDataGridViewTextBoxColumn1.DataPropertyName = "RecordDate";
+            this.recordDateDataGridViewTextBoxColumn1.HeaderText = "RecordDate";
+            this.recordDateDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.recordDateDataGridViewTextBoxColumn1.Name = "recordDateDataGridViewTextBoxColumn1";
+            this.recordDateDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Diagnosis";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Diagnosis";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Treatment";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Treatment";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Notes";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Notes";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 150;
             // 
             // recordDateDataGridViewTextBoxColumn
             // 
@@ -213,35 +291,31 @@
             this.recordDateDataGridViewTextBoxColumn.Name = "recordDateDataGridViewTextBoxColumn";
             this.recordDateDataGridViewTextBoxColumn.Width = 150;
             // 
-            // diagnosisDataGridViewTextBoxColumn
+            // hospitalManagerDataSet2
             // 
-            this.diagnosisDataGridViewTextBoxColumn.DataPropertyName = "Diagnosis";
-            this.diagnosisDataGridViewTextBoxColumn.HeaderText = "Diagnosis";
-            this.diagnosisDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.diagnosisDataGridViewTextBoxColumn.Name = "diagnosisDataGridViewTextBoxColumn";
-            this.diagnosisDataGridViewTextBoxColumn.Width = 150;
+            //this.hospitalManagerDataSet2.DataSetName = "HospitalManagerDataSet2";
+            //this.hospitalManagerDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // treatmentDataGridViewTextBoxColumn
+            // medicalHistoriesBindingSource1
             // 
-            this.treatmentDataGridViewTextBoxColumn.DataPropertyName = "Treatment";
-            this.treatmentDataGridViewTextBoxColumn.HeaderText = "Treatment";
-            this.treatmentDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.treatmentDataGridViewTextBoxColumn.Name = "treatmentDataGridViewTextBoxColumn";
-            this.treatmentDataGridViewTextBoxColumn.Width = 150;
+            //this.medicalHistoriesBindingSource1.DataMember = "MedicalHistories";
+            //this.medicalHistoriesBindingSource1.DataSource = this.hospitalManagerDataSet2;
             // 
-            // notesDataGridViewTextBoxColumn
+            // medicalHistoriesTableAdapter1
             // 
-            this.notesDataGridViewTextBoxColumn.DataPropertyName = "Notes";
-            this.notesDataGridViewTextBoxColumn.HeaderText = "Notes";
-            this.notesDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
-            this.notesDataGridViewTextBoxColumn.Width = 150;
+            //this.medicalHistoriesTableAdapter1.ClearBeforeFill = true;
+            // 
+            // medicalHistoriesBindingSource2
+            // 
+            this.medicalHistoriesBindingSource2.DataMember = "MedicalHistories";
+            this.medicalHistoriesBindingSource2.DataSource = this.hospitalManagerDataSet;
             // 
             // PatientMedicalHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 584);
+            this.Controls.Add(this.button_clear);
             this.Controls.Add(this.textBox_diagnosis);
             this.Controls.Add(this.textBox_treatment);
             this.Controls.Add(this.textBox_notes);
@@ -260,17 +334,18 @@
             this.Name = "PatientMedicalHistory";
             this.Text = "PatientMedicalHistory";
             this.Load += new System.EventHandler(this.PatientMedicalHistory_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_medicalHistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalHistoriesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_medicalHistory)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicalHistoriesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicalHistoriesBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView_medicalHistory;
         private System.Windows.Forms.TextBox textBox_recordDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_back;
@@ -288,9 +363,18 @@
         private HospitalManagerDataSet hospitalManagerDataSet;
         private System.Windows.Forms.BindingSource medicalHistoriesBindingSource;
         private HospitalManagerDataSetTableAdapters.MedicalHistoriesTableAdapter medicalHistoriesTableAdapter;
+        private System.Windows.Forms.Button button_clear;
+        private System.Windows.Forms.DataGridView dataGridView_medicalHistory;
         private System.Windows.Forms.DataGridViewTextBoxColumn recordDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn diagnosisDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn treatmentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn notesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn historyIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patientIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn recordDateDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        //private HospitalManagerDataSet2 hospitalManagerDataSet2;
+        private System.Windows.Forms.BindingSource medicalHistoriesBindingSource1;
+        //private HospitalManagerDataSet2TableAdapters.MedicalHistoriesTableAdapter medicalHistoriesTableAdapter1;
+        private System.Windows.Forms.BindingSource medicalHistoriesBindingSource2;
     }
 }
