@@ -42,7 +42,9 @@ namespace HospitalManager
 
         private void btn_chat_Click(object sender, EventArgs e)
         {
-
+            ChatForm chatForm = new ChatForm(currentUser, this);
+            chatForm.Show();
+            this.Hide();
         }
 
         private void btn_analytics_Click(object sender, EventArgs e)
@@ -73,6 +75,11 @@ namespace HospitalManager
             PatientRecords mainForm = new PatientRecords();
             mainForm.Show();
             this.Hide();
+        }
+
+        private void HubForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

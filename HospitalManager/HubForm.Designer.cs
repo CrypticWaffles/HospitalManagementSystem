@@ -84,6 +84,7 @@
             this.Controls.Add(this.lbl_hi);
             this.Name = "HubForm";
             this.Text = "Hub";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HubForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
