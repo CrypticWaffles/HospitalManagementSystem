@@ -1,0 +1,53 @@
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="ReportData" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="ReportData">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="PatientId" type="xs:int" minOccurs="0" />
+                <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+                <xs:element name="LastName" type="xs:string" minOccurs="0" />
+                <xs:element name="DateOfBirth" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="Gender" type="xs:string" minOccurs="0" />
+                <xs:element name="PhoneNumber" type="xs:string" minOccurs="0" />
+                <xs:element name="Address" type="xs:string" minOccurs="0" />
+                <xs:element name="RecordDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="Diagnosis" type="xs:string" minOccurs="0" />
+                <xs:element name="Treatment" type="xs:string" minOccurs="0" />
+                <xs:element name="Notes" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <ReportData>
+    <PatientId>4</PatientId>
+    <FirstName>Emily</FirstName>
+    <LastName>Davis</LastName>
+    <DateOfBirth>2000-02-28T00:00:00-08:00</DateOfBirth>
+    <Gender>Female</Gender>
+    <PhoneNumber>555-3456</PhoneNumber>
+    <Address>321 Birch Blvd</Address>
+    <RecordDate>2024-04-18T00:00:00-07:00</RecordDate>
+    <Diagnosis>Migraines</Diagnosis>
+    <Treatment>Sumatriptan prescribed</Treatment>
+    <Notes>Track frequency</Notes>
+  </ReportData>
+  <ReportData>
+    <PatientId>4</PatientId>
+    <FirstName>Emily</FirstName>
+    <LastName>Davis</LastName>
+    <DateOfBirth>2000-02-28T00:00:00-08:00</DateOfBirth>
+    <Gender>Female</Gender>
+    <PhoneNumber>555-3456</PhoneNumber>
+    <Address>321 Birch Blvd</Address>
+    <RecordDate>2023-10-12T00:00:00-07:00</RecordDate>
+    <Diagnosis>Asthma</Diagnosis>
+    <Treatment>Inhaler prescribed</Treatment>
+    <Notes>Needs regular checkups</Notes>
+  </ReportData>
+</NewDataSet>
