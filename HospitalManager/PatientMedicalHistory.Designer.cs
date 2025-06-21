@@ -54,17 +54,14 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recordDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            //this.hospitalManagerDataSet2 = new HospitalManager.HospitalManagerDataSet2();
-            this.medicalHistoriesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            //this.medicalHistoriesTableAdapter1 = new HospitalManager.HospitalManagerDataSet2TableAdapters.MedicalHistoriesTableAdapter();
             this.medicalHistoriesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.recordDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medicalHistoriesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.medicalHistoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_medicalHistory)).BeginInit();
-            //((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicalHistoriesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalHistoriesBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicalHistoriesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // medicalHistoriesBindingSource
@@ -283,6 +280,11 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 150;
             // 
+            // medicalHistoriesBindingSource2
+            // 
+            this.medicalHistoriesBindingSource2.DataMember = "MedicalHistories";
+            this.medicalHistoriesBindingSource2.DataSource = this.hospitalManagerDataSet;
+            // 
             // recordDateDataGridViewTextBoxColumn
             // 
             this.recordDateDataGridViewTextBoxColumn.DataPropertyName = "RecordDate";
@@ -290,25 +292,6 @@
             this.recordDateDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.recordDateDataGridViewTextBoxColumn.Name = "recordDateDataGridViewTextBoxColumn";
             this.recordDateDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // hospitalManagerDataSet2
-            // 
-            //this.hospitalManagerDataSet2.DataSetName = "HospitalManagerDataSet2";
-            //this.hospitalManagerDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // medicalHistoriesBindingSource1
-            // 
-            //this.medicalHistoriesBindingSource1.DataMember = "MedicalHistories";
-            //this.medicalHistoriesBindingSource1.DataSource = this.hospitalManagerDataSet2;
-            // 
-            // medicalHistoriesTableAdapter1
-            // 
-            //this.medicalHistoriesTableAdapter1.ClearBeforeFill = true;
-            // 
-            // medicalHistoriesBindingSource2
-            // 
-            this.medicalHistoriesBindingSource2.DataMember = "MedicalHistories";
-            this.medicalHistoriesBindingSource2.DataSource = this.hospitalManagerDataSet;
             // 
             // PatientMedicalHistory
             // 
@@ -337,9 +320,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.medicalHistoriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_medicalHistory)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicalHistoriesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalHistoriesBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicalHistoriesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

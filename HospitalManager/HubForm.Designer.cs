@@ -32,6 +32,8 @@
             this.btn_chat = new System.Windows.Forms.Button();
             this.btn_analytics = new System.Windows.Forms.Button();
             this.button_patientRecords = new System.Windows.Forms.Button();
+            this.button_medicalInventory = new System.Windows.Forms.Button();
+            this.button_appointment = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_hi
@@ -73,11 +75,33 @@
             this.button_patientRecords.UseVisualStyleBackColor = true;
             this.button_patientRecords.Click += new System.EventHandler(this.button_patientRecords_Click);
             // 
+            // button_medicalInventory
+            // 
+            this.button_medicalInventory.Location = new System.Drawing.Point(429, 264);
+            this.button_medicalInventory.Name = "button_medicalInventory";
+            this.button_medicalInventory.Size = new System.Drawing.Size(173, 33);
+            this.button_medicalInventory.TabIndex = 4;
+            this.button_medicalInventory.Text = "Medical Inventory";
+            this.button_medicalInventory.UseVisualStyleBackColor = true;
+            this.button_medicalInventory.Click += new System.EventHandler(this.button_medicalInventory_Click);
+            // 
+            // button_appointment
+            // 
+            this.button_appointment.Location = new System.Drawing.Point(429, 194);
+            this.button_appointment.Name = "button_appointment";
+            this.button_appointment.Size = new System.Drawing.Size(173, 33);
+            this.button_appointment.TabIndex = 5;
+            this.button_appointment.Text = "User Appointment";
+            this.button_appointment.UseVisualStyleBackColor = true;
+            this.button_appointment.Click += new System.EventHandler(this.button_appointment_Click);
+            // 
             // HubForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button_appointment);
+            this.Controls.Add(this.button_medicalInventory);
             this.Controls.Add(this.button_patientRecords);
             this.Controls.Add(this.btn_analytics);
             this.Controls.Add(this.btn_chat);
@@ -95,5 +119,7 @@
         private System.Windows.Forms.Button btn_chat;
         private System.Windows.Forms.Button btn_analytics;
         private System.Windows.Forms.Button button_patientRecords;
+        private System.Windows.Forms.Button button_medicalInventory;
+        private System.Windows.Forms.Button button_appointment;
     }
 }

@@ -29,7 +29,7 @@ namespace HospitalManager
             InitializeUserDatabase();
             var filter = Builders<User>.Filter.Eq("username", "admin");
             currentUser = usersCollection.Find(filter).FirstOrDefault();
-            lbl_hi.Text = $"Logged in as: {currentUser.Username}.";
+            //lbl_hi.Text = $"Logged in as: {currentUser.Username}.";
         }
 
         public HubForm(User user)
@@ -71,6 +71,20 @@ namespace HospitalManager
         private void button_patientRecords_Click(object sender, EventArgs e)
         {
             PatientRecords mainForm = new PatientRecords();
+            mainForm.Show();
+            this.Hide();
+        }
+
+        private void button_medicalInventory_Click(object sender, EventArgs e)
+        {
+            MedicalInventoryManagement mainForm = new MedicalInventoryManagement();
+            mainForm.Show();
+            this.Hide();
+        }
+
+        private void button_appointment_Click(object sender, EventArgs e)
+        {
+            AppointmentScheduling mainForm = new AppointmentScheduling();
             mainForm.Show();
             this.Hide();
         }
