@@ -15,6 +15,22 @@ namespace HospitalManager
         private HubForm hubForm;
         private string connectionString = ConfigurationManager.ConnectionStrings["HospitalManager.Properties.Settings.HospitalManagerConnectionString"].ConnectionString;
 
+        private DataGridView dgv_report
+        {
+            get 
+            {
+                if (tbc_control.SelectedTab == tbp_inventory) 
+                {
+                    return dgv_inventory;
+                }
+                else if (tbc_control.SelectedTab == tbp_patients)
+                {
+                    return dgv_patients;
+                }
+                return null; 
+            }
+        }
+
         // Constructor without parameter
         public AnalyticsForm()
         {
@@ -27,7 +43,8 @@ namespace HospitalManager
             InitializeComponent();
             currentUser = user;
             this.hubForm = hubForm;
-            LoadPatientData(); 
+            LoadPatientData();
+            LoadInventoryData();
         }
 
         // Event handler for form closing
@@ -47,7 +64,7 @@ namespace HospitalManager
                     // Concat First and Last Names for better display in ComboBox
                     string query = "SELECT PatientId, FirstName, LastName, FirstName + ' ' + LastName AS FullName FROM dbo.Patients ORDER BY LastName, FirstName";
                     SqlDataAdapter da = new SqlDataAdapter(query, connection);
-                    DataTable dt = new DataTable();
+                    DataTable dt = new DataTable(); 
                     da.Fill(dt);
 
                     DataRow allPatientsRow = dt.NewRow();
@@ -124,7 +141,7 @@ namespace HospitalManager
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                     dt.TableName = "PatientReport";
-                    dgv_report.DataSource = dt;
+                    dgv_patients.DataSource = dt;
                 }
             }
             catch (Exception ex)
@@ -163,7 +180,7 @@ namespace HospitalManager
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                     dt.TableName = "GeneralReport";
-                    dgv_report.DataSource = dt;
+                    dgv_patients.DataSource = dt;
                 }
             }
             catch (Exception ex)
@@ -178,10 +195,130 @@ namespace HospitalManager
             GenerateGeneralReport();
         }
 
+        private void LoadInventoryData()
+        {
+            try 
+            { 
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT DISTINCT ItemType FROM dbo.MedicalInventory ORDER BY ItemType";
+                    SqlDataAdapter da = new SqlDataAdapter(query, connection);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    // Add an "All Item Types" option
+                    DataRow allTypesRow = dt.NewRow();
+                    allTypesRow["ItemType"] = "All Item Types";
+                    dt.Rows.InsertAt(allTypesRow, 0);
+
+                    cmb_invFilter.DataSource = dt;
+                    cmb_invFilter.DisplayMember = "ItemType";
+                    cmb_invFilter.ValueMember = "ItemType"; // Use ItemType as value
+                    cmb_invFilter.SelectedIndex = 0; // Select "All Item Types" by default
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading inventory data: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cmb_invFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_invFilter.SelectedValue != null)
+            {
+                string selectedType = cmb_invFilter.SelectedValue.ToString();
+                if (selectedType == "All Item Types")
+                {
+                    GenerateFullInventoryReport(); 
+                }
+                else
+                {
+                    GenerateInventoryReportByType(selectedType);
+                }
+            }
+        }
+
+        private void GenerateInventoryReportByType(string itemType)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = @"
+                        SELECT
+                            ItemID,
+                            ItemName,
+                            ItemType,
+                            QuantityInStock,
+                            Unit,
+                            LastUpdated
+                        FROM
+                            dbo.MedicalInventory
+                        WHERE
+                            ItemType = @ItemType
+                        ORDER BY
+                            ItemName";
+
+                    SqlDataAdapter da = new SqlDataAdapter(query, connection);
+                    da.SelectCommand.Parameters.AddWithValue("@ItemType", itemType);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dt.TableName = "InventoryTypeReport"; // Set DataTable name for XML serialization
+                    dgv_inventory.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error generating inventory report by type: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void GenerateFullInventoryReport()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = @"
+                        SELECT
+                            ItemID,
+                            ItemName,
+                            ItemType,
+                            QuantityInStock,
+                            Unit,
+                            LastUpdated
+                        FROM
+                            dbo.MedicalInventory
+                        ORDER BY
+                            ItemType, ItemName";
+
+                    SqlDataAdapter da = new SqlDataAdapter(query, connection);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dt.TableName = "FullInventoryReport"; // Set DataTable name for XML serialization
+                    dgv_inventory.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error generating full inventory report: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_inventoryReport_Click(object sender, EventArgs e)
+        {
+            GenerateFullInventoryReport();
+        }
+
         // Method to export data to JSON
         private void btn_exportJson_Click(object sender, EventArgs e)
         {
-            if (dgv_report.DataSource == null)
+            DataGridView current = dgv_report;
+            if (current == null || current.DataSource == null)
             {
                 MessageBox.Show("No data to export.", "Export Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -189,7 +326,7 @@ namespace HospitalManager
 
             try
             {
-                DataTable dt = (DataTable)dgv_report.DataSource;
+                DataTable dt = (DataTable)current.DataSource;
                 string json = JsonConvert.SerializeObject(dt, Newtonsoft.Json.Formatting.Indented);
 
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -212,7 +349,8 @@ namespace HospitalManager
         // Method to export data to CSV
         private void btn_exportCsv_Click(object sender, EventArgs e)
         {
-            if (dgv_report.DataSource == null)
+            DataGridView current = dgv_report;
+            if (current == null || current.DataSource == null)
             {
                 MessageBox.Show("No data to export.", "Export Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -220,7 +358,7 @@ namespace HospitalManager
 
             try
             {
-                DataTable dt = (DataTable)dgv_report.DataSource;
+                DataTable dt = (DataTable)current.DataSource;
                 StringWriter sw = new StringWriter();
 
                 // Write header row
@@ -274,7 +412,8 @@ namespace HospitalManager
         // Method to export data to XML
         private void btn_exportXml_Click(object sender, EventArgs e)
         {
-            if (dgv_report.DataSource == null)
+            DataGridView current = dgv_report;
+            if (current == null || current.DataSource == null)
             {
                 MessageBox.Show("No data to export.", "Export Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -282,7 +421,7 @@ namespace HospitalManager
 
             try
             {
-                DataTable dt = (DataTable)dgv_report.DataSource;
+                DataTable dt = (DataTable)current.DataSource;
                 dt.TableName = "ReportData";
                 StringWriter sw = new StringWriter();
                 dt.WriteXml(sw, XmlWriteMode.WriteSchema);

@@ -86,7 +86,7 @@ namespace HospitalManager
 
         private void button_patientRecords_Click(object sender, EventArgs e)
         {
-            PatientRecords mainForm = new PatientRecords();
+            PatientRecords mainForm = new PatientRecords(this);
             mainForm.Show();
             this.Hide();
         }

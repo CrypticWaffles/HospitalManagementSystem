@@ -18,6 +18,7 @@ namespace HospitalManager
 {
     public partial class PatientMedicalHistory : Form
     {
+        private PatientRecords patientRecords;
         public int SelectedPatient { get; }
         public string PatientFirstName { get; }
         public string PatientLastName { get; }
@@ -36,6 +37,16 @@ namespace HospitalManager
             SelectedPatient = selectedPatient;
             PatientFirstName = patientsFirstName;
             PatientLastName = patientsLastName;
+
+        }
+
+        public PatientMedicalHistory(int selectedPatient, string patientsFirstName, string patientsLastName, PatientRecords patientRecords)
+        {
+            InitializeComponent();
+            SelectedPatient = selectedPatient;
+            PatientFirstName = patientsFirstName;
+            PatientLastName = patientsLastName;
+            this.patientRecords = patientRecords;
 
         }
 
@@ -177,13 +188,6 @@ namespace HospitalManager
             }
         }
 
-        private void button_back_Click(object sender, EventArgs e)
-        {
-            PatientRecords mainForm = new PatientRecords();
-            mainForm.Show();
-            this.Hide();
-        }
-
         private void refresh_Click(object sender, EventArgs e)
         {
             try
@@ -274,6 +278,11 @@ namespace HospitalManager
             textBox_treatment.Clear();
             textBox_notes.Clear();
             HistoryId = 0;
+        }
+
+        private void PatientMedicalHistory_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            patientRecords.Show();
         }
     }
 }

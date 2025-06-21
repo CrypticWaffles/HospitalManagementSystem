@@ -19,10 +19,19 @@ namespace HospitalManager
 {
     public partial class PatientRecords : Form
     {
+        private HubForm HubForm;
+
         public PatientRecords()
         {
             InitializeComponent();
         }
+
+        public PatientRecords(HubForm hubForm)
+        {
+            InitializeComponent();
+            this.HubForm = hubForm;
+        }
+
         int PatientID;
         string FirstName;
         string LastName;
@@ -188,7 +197,7 @@ namespace HospitalManager
             string patientsFirstName = FirstName;
             string patientsLastName = LastName;
 
-            PatientMedicalHistory mainForm = new PatientMedicalHistory(selectedPatient, patientsFirstName, patientsLastName);
+            PatientMedicalHistory mainForm = new PatientMedicalHistory(selectedPatient, patientsFirstName, patientsLastName, this);
             mainForm.Show();
             this.Hide();
         }
@@ -196,13 +205,6 @@ namespace HospitalManager
         private void button_upload_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void button_back_Click(object sender, EventArgs e)
-        {
-            HubForm mainForm = new HubForm();
-            mainForm.Show();
-            this.Hide();
         }
 
         private void dataGridView_patientRecords_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -296,6 +298,11 @@ namespace HospitalManager
             textBox_address.Text = "";
 
             refresh_Click(sender, e);
+        }
+
+        private void PatientRecords_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            HubForm.Show();
         }
     }
 }
