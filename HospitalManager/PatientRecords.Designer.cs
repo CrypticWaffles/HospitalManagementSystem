@@ -71,6 +71,7 @@
             this.patientsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.hospitalManagerDataSet2BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.patientsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.button_back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_patientRecords)).BeginInit();
@@ -404,11 +405,22 @@
             this.patientsBindingSource3.DataMember = "Patients";
             this.patientsBindingSource3.DataSource = this.hospitalManagerDataSet;
             // 
+            // button_back
+            // 
+            this.button_back.Location = new System.Drawing.Point(656, 626);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(83, 30);
+            this.button_back.TabIndex = 23;
+            this.button_back.Text = "Back";
+            this.button_back.UseVisualStyleBackColor = true;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            // 
             // PatientRecords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 668);
+            this.Controls.Add(this.button_back);
             this.Controls.Add(this.dataGridView_patientRecords);
             this.Controls.Add(this.button_clear);
             this.Controls.Add(this.button_medicalHistory);
@@ -432,7 +444,6 @@
             this.Controls.Add(this.button_delete);
             this.Name = "PatientRecords";
             this.Text = "PatientRecords";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PatientRecords_FormClosed);
             this.Load += new System.EventHandler(this.PatientRecords_Load);
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet)).EndInit();
@@ -492,5 +503,6 @@
         private System.Windows.Forms.BindingSource patientsBindingSource2;
         private System.Windows.Forms.BindingSource hospitalManagerDataSet2BindingSource1;
         private System.Windows.Forms.BindingSource patientsBindingSource3;
+        private System.Windows.Forms.Button button_back;
     }
 }

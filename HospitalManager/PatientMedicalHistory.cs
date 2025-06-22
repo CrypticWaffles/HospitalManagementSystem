@@ -40,16 +40,6 @@ namespace HospitalManager
 
         }
 
-        public PatientMedicalHistory(int selectedPatient, string patientsFirstName, string patientsLastName, PatientRecords patientRecords)
-        {
-            InitializeComponent();
-            SelectedPatient = selectedPatient;
-            PatientFirstName = patientsFirstName;
-            PatientLastName = patientsLastName;
-            this.patientRecords = patientRecords;
-
-        }
-
         private void PatientMedicalHistory_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'hospitalManagerDataSet.MedicalHistories' table. You can move, or remove it, as needed.
@@ -188,6 +178,13 @@ namespace HospitalManager
             }
         }
 
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            PatientRecords mainForm = new PatientRecords();
+            mainForm.Show();
+            this.Hide();
+        }
+
         private void refresh_Click(object sender, EventArgs e)
         {
             try
@@ -278,11 +275,6 @@ namespace HospitalManager
             textBox_treatment.Clear();
             textBox_notes.Clear();
             HistoryId = 0;
-        }
-
-        private void PatientMedicalHistory_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            patientRecords.Show();
         }
     }
 }

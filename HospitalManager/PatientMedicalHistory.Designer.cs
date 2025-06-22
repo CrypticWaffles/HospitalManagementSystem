@@ -56,6 +56,7 @@
             this.medicalHistoriesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.recordDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.medicalHistoriesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.button_back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.medicalHistoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_medicalHistory)).BeginInit();
@@ -282,11 +283,22 @@
             this.recordDateDataGridViewTextBoxColumn.Name = "recordDateDataGridViewTextBoxColumn";
             this.recordDateDataGridViewTextBoxColumn.Width = 150;
             // 
+            // button_back
+            // 
+            this.button_back.Location = new System.Drawing.Point(688, 542);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(83, 30);
+            this.button_back.TabIndex = 33;
+            this.button_back.Text = "Back";
+            this.button_back.UseVisualStyleBackColor = true;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            // 
             // PatientMedicalHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 584);
+            this.Controls.Add(this.button_back);
             this.Controls.Add(this.button_clear);
             this.Controls.Add(this.textBox_diagnosis);
             this.Controls.Add(this.textBox_treatment);
@@ -304,7 +316,6 @@
             this.Controls.Add(this.dataGridView_medicalHistory);
             this.Name = "PatientMedicalHistory";
             this.Text = "PatientMedicalHistory";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PatientMedicalHistory_FormClosed);
             this.Load += new System.EventHandler(this.PatientMedicalHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.medicalHistoriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet)).EndInit();
@@ -346,5 +357,6 @@
         private System.Windows.Forms.BindingSource medicalHistoriesBindingSource1;
         //private HospitalManagerDataSet2TableAdapters.MedicalHistoriesTableAdapter medicalHistoriesTableAdapter1;
         private System.Windows.Forms.BindingSource medicalHistoriesBindingSource2;
+        private System.Windows.Forms.Button button_back;
     }
 }
