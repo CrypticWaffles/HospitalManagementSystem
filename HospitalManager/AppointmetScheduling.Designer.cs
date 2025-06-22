@@ -389,6 +389,7 @@
             this.Controls.Add(this.dataGridView_user);
             this.Name = "AppointmentScheduling";
             this.Text = "AppointmetScheduling";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AppointmentScheduling_FormClosed);
             this.Load += new System.EventHandler(this.AppointmetScheduling_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_user)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();

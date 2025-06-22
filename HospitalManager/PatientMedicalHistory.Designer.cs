@@ -281,7 +281,6 @@
             this.recordDateDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.recordDateDataGridViewTextBoxColumn.Name = "recordDateDataGridViewTextBoxColumn";
             this.recordDateDataGridViewTextBoxColumn.Width = 150;
-
             // 
             // PatientMedicalHistory
             // 
@@ -305,6 +304,7 @@
             this.Controls.Add(this.dataGridView_medicalHistory);
             this.Name = "PatientMedicalHistory";
             this.Text = "PatientMedicalHistory";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PatientMedicalHistory_FormClosed);
             this.Load += new System.EventHandler(this.PatientMedicalHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.medicalHistoriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet)).EndInit();

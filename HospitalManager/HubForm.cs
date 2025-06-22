@@ -49,6 +49,8 @@ namespace HospitalManager
             {
                 btn_analytics.Visible = true;
                 button_patientRecords.Visible = true;
+                button_appointments.Visible = true;
+                button_inventory.Visible = true;
             }
         }
 
@@ -82,6 +84,27 @@ namespace HospitalManager
 
             // Get collection
             usersCollection = database.GetCollection<User>("users");
+        }
+
+        private void button_patientRecords_Click(object sender, EventArgs e)
+        {
+            PatientRecords patientRecords = new PatientRecords();
+            patientRecords.Show();
+            this.Hide();
+        }
+
+        private void button_appointments_Click(object sender, EventArgs e)
+        {
+            AppointmentScheduling appointmentScheduling = new AppointmentScheduling();
+            appointmentScheduling.Show();
+            this.Hide();
+        }
+
+        private void button_inventory_Click(object sender, EventArgs e)
+        {
+            MedicalInventoryManagement medicalInventoryManagement = new MedicalInventoryManagement();
+            medicalInventoryManagement.Show();
+            this.Hide();
         }
     }
 }

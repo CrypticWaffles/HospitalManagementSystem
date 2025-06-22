@@ -444,6 +444,7 @@
             this.Controls.Add(this.button_delete);
             this.Name = "PatientRecords";
             this.Text = "PatientRecords";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PatientRecords_FormClosed);
             this.Load += new System.EventHandler(this.PatientRecords_Load);
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet)).EndInit();

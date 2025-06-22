@@ -276,5 +276,12 @@ namespace HospitalManager
             textBox_notes.Clear();
             HistoryId = 0;
         }
+
+        private void PatientMedicalHistory_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            PatientRecords mainForm = new PatientRecords();
+            mainForm.Show();
+            this.Hide();
+        }
     }
 }

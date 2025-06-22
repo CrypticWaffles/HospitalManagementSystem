@@ -30,6 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView_medicalInventory = new System.Windows.Forms.DataGridView();
+            this.itemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityInStockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastUpdatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medicalInventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hospitalManagerDataSetInventory = new HospitalManager.HospitalManagerDataSetInventory();
             this.button_add = new System.Windows.Forms.Button();
             this.button_search = new System.Windows.Forms.Button();
             this.button_edit = new System.Windows.Forms.Button();
@@ -38,15 +46,7 @@
             this.label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_name = new System.Windows.Forms.TextBox();
-            this.hospitalManagerDataSetInventory = new HospitalManager.HospitalManagerDataSetInventory();
-            this.medicalInventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.medicalInventoryTableAdapter = new HospitalManager.HospitalManagerDataSetInventoryTableAdapters.MedicalInventoryTableAdapter();
-            this.itemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityInStockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastUpdatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,8 +55,8 @@
             this.textBox_unit = new System.Windows.Forms.TextBox();
             this.button_clear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_medicalInventory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSetInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalInventoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSetInventory)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView_medicalInventory
@@ -79,6 +79,65 @@
             this.dataGridView_medicalInventory.TabIndex = 0;
             this.dataGridView_medicalInventory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_medicalInventory_CellContentClick);
             this.dataGridView_medicalInventory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_medicalInventory_CellContentClick);
+            // 
+            // itemIDDataGridViewTextBoxColumn
+            // 
+            this.itemIDDataGridViewTextBoxColumn.DataPropertyName = "ItemID";
+            this.itemIDDataGridViewTextBoxColumn.HeaderText = "ItemID";
+            this.itemIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.itemIDDataGridViewTextBoxColumn.Name = "itemIDDataGridViewTextBoxColumn";
+            this.itemIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.itemIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // itemNameDataGridViewTextBoxColumn
+            // 
+            this.itemNameDataGridViewTextBoxColumn.DataPropertyName = "ItemName";
+            this.itemNameDataGridViewTextBoxColumn.HeaderText = "ItemName";
+            this.itemNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.itemNameDataGridViewTextBoxColumn.Name = "itemNameDataGridViewTextBoxColumn";
+            this.itemNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // itemTypeDataGridViewTextBoxColumn
+            // 
+            this.itemTypeDataGridViewTextBoxColumn.DataPropertyName = "ItemType";
+            this.itemTypeDataGridViewTextBoxColumn.HeaderText = "ItemType";
+            this.itemTypeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.itemTypeDataGridViewTextBoxColumn.Name = "itemTypeDataGridViewTextBoxColumn";
+            this.itemTypeDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // quantityInStockDataGridViewTextBoxColumn
+            // 
+            this.quantityInStockDataGridViewTextBoxColumn.DataPropertyName = "QuantityInStock";
+            this.quantityInStockDataGridViewTextBoxColumn.HeaderText = "QuantityInStock";
+            this.quantityInStockDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.quantityInStockDataGridViewTextBoxColumn.Name = "quantityInStockDataGridViewTextBoxColumn";
+            this.quantityInStockDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // unitDataGridViewTextBoxColumn
+            // 
+            this.unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
+            this.unitDataGridViewTextBoxColumn.HeaderText = "Unit";
+            this.unitDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
+            this.unitDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // lastUpdatedDataGridViewTextBoxColumn
+            // 
+            this.lastUpdatedDataGridViewTextBoxColumn.DataPropertyName = "LastUpdated";
+            this.lastUpdatedDataGridViewTextBoxColumn.HeaderText = "LastUpdated";
+            this.lastUpdatedDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.lastUpdatedDataGridViewTextBoxColumn.Name = "lastUpdatedDataGridViewTextBoxColumn";
+            this.lastUpdatedDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // medicalInventoryBindingSource
+            // 
+            this.medicalInventoryBindingSource.DataMember = "MedicalInventory";
+            this.medicalInventoryBindingSource.DataSource = this.hospitalManagerDataSetInventory;
+            // 
+            // hospitalManagerDataSetInventory
+            // 
+            this.hospitalManagerDataSetInventory.DataSetName = "HospitalManagerDataSetInventory";
+            this.hospitalManagerDataSetInventory.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button_add
             // 
@@ -155,68 +214,9 @@
             this.textBox_name.Size = new System.Drawing.Size(308, 26);
             this.textBox_name.TabIndex = 8;
             // 
-            // hospitalManagerDataSetInventory
-            // 
-            this.hospitalManagerDataSetInventory.DataSetName = "HospitalManagerDataSetInventory";
-            this.hospitalManagerDataSetInventory.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // medicalInventoryBindingSource
-            // 
-            this.medicalInventoryBindingSource.DataMember = "MedicalInventory";
-            this.medicalInventoryBindingSource.DataSource = this.hospitalManagerDataSetInventory;
-            // 
             // medicalInventoryTableAdapter
             // 
             this.medicalInventoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // itemIDDataGridViewTextBoxColumn
-            // 
-            this.itemIDDataGridViewTextBoxColumn.DataPropertyName = "ItemID";
-            this.itemIDDataGridViewTextBoxColumn.HeaderText = "ItemID";
-            this.itemIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.itemIDDataGridViewTextBoxColumn.Name = "itemIDDataGridViewTextBoxColumn";
-            this.itemIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.itemIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // itemNameDataGridViewTextBoxColumn
-            // 
-            this.itemNameDataGridViewTextBoxColumn.DataPropertyName = "ItemName";
-            this.itemNameDataGridViewTextBoxColumn.HeaderText = "ItemName";
-            this.itemNameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.itemNameDataGridViewTextBoxColumn.Name = "itemNameDataGridViewTextBoxColumn";
-            this.itemNameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // itemTypeDataGridViewTextBoxColumn
-            // 
-            this.itemTypeDataGridViewTextBoxColumn.DataPropertyName = "ItemType";
-            this.itemTypeDataGridViewTextBoxColumn.HeaderText = "ItemType";
-            this.itemTypeDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.itemTypeDataGridViewTextBoxColumn.Name = "itemTypeDataGridViewTextBoxColumn";
-            this.itemTypeDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // quantityInStockDataGridViewTextBoxColumn
-            // 
-            this.quantityInStockDataGridViewTextBoxColumn.DataPropertyName = "QuantityInStock";
-            this.quantityInStockDataGridViewTextBoxColumn.HeaderText = "QuantityInStock";
-            this.quantityInStockDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.quantityInStockDataGridViewTextBoxColumn.Name = "quantityInStockDataGridViewTextBoxColumn";
-            this.quantityInStockDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // unitDataGridViewTextBoxColumn
-            // 
-            this.unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
-            this.unitDataGridViewTextBoxColumn.HeaderText = "Unit";
-            this.unitDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
-            this.unitDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // lastUpdatedDataGridViewTextBoxColumn
-            // 
-            this.lastUpdatedDataGridViewTextBoxColumn.DataPropertyName = "LastUpdated";
-            this.lastUpdatedDataGridViewTextBoxColumn.HeaderText = "LastUpdated";
-            this.lastUpdatedDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.lastUpdatedDataGridViewTextBoxColumn.Name = "lastUpdatedDataGridViewTextBoxColumn";
-            this.lastUpdatedDataGridViewTextBoxColumn.Width = 150;
             // 
             // label3
             // 
@@ -299,10 +299,11 @@
             this.Controls.Add(this.dataGridView_medicalInventory);
             this.Name = "MedicalInventoryManagement";
             this.Text = "MedicalInventoryManagement";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MedicalInventoryManagement_FormClosed);
             this.Load += new System.EventHandler(this.MedicalInventoryManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_medicalInventory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSetInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalInventoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSetInventory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -33,6 +33,8 @@
             this.btn_analytics = new System.Windows.Forms.Button();
             this.button_patientRecords = new System.Windows.Forms.Button();
             this.lbl_role = new System.Windows.Forms.Label();
+            this.button_appointments = new System.Windows.Forms.Button();
+            this.button_inventory = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_hi
@@ -67,13 +69,14 @@
             // 
             // button_patientRecords
             // 
-            this.button_patientRecords.Location = new System.Drawing.Point(167, 157);
+            this.button_patientRecords.Location = new System.Drawing.Point(167, 87);
             this.button_patientRecords.Name = "button_patientRecords";
             this.button_patientRecords.Size = new System.Drawing.Size(186, 30);
             this.button_patientRecords.TabIndex = 3;
             this.button_patientRecords.Text = "Patient Records";
             this.button_patientRecords.UseVisualStyleBackColor = true;
             this.button_patientRecords.Visible = false;
+            this.button_patientRecords.Click += new System.EventHandler(this.button_patientRecords_Click);
             // 
             // lbl_role
             // 
@@ -84,11 +87,35 @@
             this.lbl_role.TabIndex = 4;
             this.lbl_role.Text = "Role:";
             // 
+            // button_appointments
+            // 
+            this.button_appointments.Location = new System.Drawing.Point(167, 157);
+            this.button_appointments.Name = "button_appointments";
+            this.button_appointments.Size = new System.Drawing.Size(186, 30);
+            this.button_appointments.TabIndex = 5;
+            this.button_appointments.Text = "Appointments";
+            this.button_appointments.UseVisualStyleBackColor = true;
+            this.button_appointments.Visible = false;
+            this.button_appointments.Click += new System.EventHandler(this.button_appointments_Click);
+            // 
+            // button_inventory
+            // 
+            this.button_inventory.Location = new System.Drawing.Point(403, 87);
+            this.button_inventory.Name = "button_inventory";
+            this.button_inventory.Size = new System.Drawing.Size(186, 30);
+            this.button_inventory.TabIndex = 6;
+            this.button_inventory.Text = "Inventory";
+            this.button_inventory.UseVisualStyleBackColor = true;
+            this.button_inventory.Visible = false;
+            this.button_inventory.Click += new System.EventHandler(this.button_inventory_Click);
+            // 
             // HubForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 287);
+            this.Controls.Add(this.button_inventory);
+            this.Controls.Add(this.button_appointments);
             this.Controls.Add(this.lbl_role);
             this.Controls.Add(this.button_patientRecords);
             this.Controls.Add(this.btn_analytics);
@@ -108,5 +135,7 @@
         private System.Windows.Forms.Button btn_analytics;
         private System.Windows.Forms.Button button_patientRecords;
         private System.Windows.Forms.Label lbl_role;
+        private System.Windows.Forms.Button button_appointments;
+        private System.Windows.Forms.Button button_inventory;
     }
 }

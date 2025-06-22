@@ -249,5 +249,12 @@ namespace HospitalManager
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void AppointmentScheduling_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            HubForm mainForm = new HubForm();
+            mainForm.Show();
+            this.Hide();
+        }
     }
 }

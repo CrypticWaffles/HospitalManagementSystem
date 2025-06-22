@@ -297,5 +297,12 @@ namespace HospitalManager
 
             refresh_Click(sender, e);
         }
+
+        private void PatientRecords_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            HubForm mainForm = new HubForm();
+            mainForm.Show();
+            this.Hide();
+        }
     }
 }
