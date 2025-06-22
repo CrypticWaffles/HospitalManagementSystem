@@ -86,7 +86,9 @@ namespace HospitalManager
                 Username = username,
                 Password = password,
                 Email = email,
-                Role = role
+                Role = role,
+                Registered = false,
+                PatientID = 0
             };
 
             // Insert the new user into the database
