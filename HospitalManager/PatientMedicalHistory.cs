@@ -18,6 +18,7 @@ namespace HospitalManager
 {
     public partial class PatientMedicalHistory : Form
     {
+        private PatientRecords patientRecords;
         public int SelectedPatient { get; }
         public string PatientFirstName { get; }
         public string PatientLastName { get; }

@@ -1,0 +1,102 @@
+[
+  {
+    "PatientId": 5,
+    "FirstName": "Robert",
+    "LastName": "Brown",
+    "RecordDate": "2023-08-14T00:00:00",
+    "Diagnosis": "Skin Rash",
+    "Treatment": "Topical cream",
+    "DiagnosisCount": 1,
+    "TreatmentCount": 1
+  },
+  {
+    "PatientId": 5,
+    "FirstName": "Robert",
+    "LastName": "Brown",
+    "RecordDate": "2022-01-25T00:00:00",
+    "Diagnosis": "Arthritis",
+    "Treatment": "Pain management with NSAIDs",
+    "DiagnosisCount": 1,
+    "TreatmentCount": 1
+  },
+  {
+    "PatientId": 4,
+    "FirstName": "Emily",
+    "LastName": "Davis",
+    "RecordDate": "2024-04-18T00:00:00",
+    "Diagnosis": "Migraines",
+    "Treatment": "Sumatriptan prescribed",
+    "DiagnosisCount": 1,
+    "TreatmentCount": 1
+  },
+  {
+    "PatientId": 4,
+    "FirstName": "Emily",
+    "LastName": "Davis",
+    "RecordDate": "2023-10-12T00:00:00",
+    "Diagnosis": "Asthma",
+    "Treatment": "Inhaler prescribed",
+    "DiagnosisCount": 1,
+    "TreatmentCount": 1
+  },
+  {
+    "PatientId": 1,
+    "FirstName": "John",
+    "LastName": "Doe",
+    "RecordDate": "2024-01-15T00:00:00",
+    "Diagnosis": "Seasonal Allergies",
+    "Treatment": "Antihistamines",
+    "DiagnosisCount": 1,
+    "TreatmentCount": 1
+  },
+  {
+    "PatientId": 1,
+    "FirstName": "John",
+    "LastName": "Doe",
+    "RecordDate": "2023-05-10T00:00:00",
+    "Diagnosis": "Hypertension",
+    "Treatment": "Prescribed medication (Lisinopril)",
+    "DiagnosisCount": 1,
+    "TreatmentCount": 1
+  },
+  {
+    "PatientId": 3,
+    "FirstName": "Michael",
+    "LastName": "Johnson",
+    "RecordDate": "2023-12-05T00:00:00",
+    "Diagnosis": "High Cholesterol",
+    "Treatment": "Statins prescribed",
+    "DiagnosisCount": 1,
+    "TreatmentCount": 1
+  },
+  {
+    "PatientId": 3,
+    "FirstName": "Michael",
+    "LastName": "Johnson",
+    "RecordDate": "2022-09-30T00:00:00",
+    "Diagnosis": "Back Pain",
+    "Treatment": "Physical Therapy",
+    "DiagnosisCount": 1,
+    "TreatmentCount": 1
+  },
+  {
+    "PatientId": 2,
+    "FirstName": "Jane",
+    "LastName": "Smith",
+    "RecordDate": "2024-02-11T00:00:00",
+    "Diagnosis": "Flu",
+    "Treatment": "Oseltamivir",
+    "DiagnosisCount": 1,
+    "TreatmentCount": 1
+  },
+  {
+    "PatientId": 2,
+    "FirstName": "Jane",
+    "LastName": "Smith",
+    "RecordDate": "2023-06-20T00:00:00",
+    "Diagnosis": "Type 2 Diabetes",
+    "Treatment": "Diet + Metformin",
+    "DiagnosisCount": 1,
+    "TreatmentCount": 1
+  }
+]

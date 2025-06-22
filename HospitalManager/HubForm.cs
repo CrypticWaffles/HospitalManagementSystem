@@ -29,7 +29,7 @@ namespace HospitalManager
             InitializeUserDatabase();
             var filter = Builders<User>.Filter.Eq("username", "admin");
             currentUser = usersCollection.Find(filter).FirstOrDefault();
-            lbl_hi.Text = $"Logged in as: {currentUser.Username}.";
+            SetupForm();
         }
 
         public HubForm(User user)
@@ -37,17 +37,33 @@ namespace HospitalManager
             InitializeComponent();
             InitializeUserDatabase();
             currentUser = user;
+            SetupForm();
+        }
+
+        public void SetupForm()
+        {
             lbl_hi.Text = $"Logged in as: {currentUser.Username}.";
+            lbl_role.Text = $"Role: {currentUser.Role}.";
+
+            if (currentUser.Role != "Patient")
+            {
+                btn_analytics.Visible = true;
+                button_patientRecords.Visible = true;
+            }
         }
 
         private void btn_chat_Click(object sender, EventArgs e)
         {
-
+            ChatForm chatForm = new ChatForm(currentUser, this);
+            chatForm.Show();
+            this.Hide();
         }
 
         private void btn_analytics_Click(object sender, EventArgs e)
         {
-
+            AnalyticsForm analyticsForm = new AnalyticsForm(currentUser, this);
+            analyticsForm.Show();
+            this.Hide();
         }
 
         // Initializes the MongoDB database connection and retrieves the users collection.

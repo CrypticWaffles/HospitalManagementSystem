@@ -51,7 +51,6 @@
             this.button_upload = new System.Windows.Forms.Button();
             this.button_medicalHistory = new System.Windows.Forms.Button();
             this.patientsTableAdapter = new HospitalManager.HospitalManagerDataSetTableAdapters.PatientsTableAdapter();
-            this.button_back = new System.Windows.Forms.Button();
             this.firstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfBirthDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,12 +59,6 @@
             this.addressDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button_clear = new System.Windows.Forms.Button();
             this.dataGridView_patientRecords = new System.Windows.Forms.DataGridView();
-            //this.hospitalManagerDataSet2 = new HospitalManager.HospitalManagerDataSet2();
-            this.hospitalManagerDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.patientsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            //this.patientsTableAdapter1 = new HospitalManager.HospitalManagerDataSet2TableAdapters.PatientsTableAdapter();
-            this.hospitalManagerDataSet2BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.patientsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.patientIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,15 +67,19 @@
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientsBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.hospitalManagerDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.patientsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.hospitalManagerDataSet2BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.patientsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.button_back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_patientRecords)).BeginInit();
-            //((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet2BindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // patientsBindingSource
@@ -264,16 +261,6 @@
             // 
             this.patientsTableAdapter.ClearBeforeFill = true;
             // 
-            // button_back
-            // 
-            this.button_back.Location = new System.Drawing.Point(648, 619);
-            this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(83, 30);
-            this.button_back.TabIndex = 20;
-            this.button_back.Text = "Back";
-            this.button_back.UseVisualStyleBackColor = true;
-            this.button_back.Click += new System.EventHandler(this.button_back_Click);
-            // 
             // firstNameDataGridViewTextBoxColumn1
             // 
             this.firstNameDataGridViewTextBoxColumn1.DataPropertyName = "FirstName";
@@ -356,35 +343,6 @@
             this.dataGridView_patientRecords.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_patientRecords_CellContentClick);
             this.dataGridView_patientRecords.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_patientRecords_CellContentClick);
             // 
-            // hospitalManagerDataSet2
-            // 
-            //this.hospitalManagerDataSet2.DataSetName = "HospitalManagerDataSet2";
-            //this.hospitalManagerDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // hospitalManagerDataSet2BindingSource
-            // 
-            //this.hospitalManagerDataSet2BindingSource.DataSource = this.hospitalManagerDataSet2;
-            //this.hospitalManagerDataSet2BindingSource.Position = 0;
-            // 
-            // patientsBindingSource1
-            // 
-            //this.patientsBindingSource1.DataMember = "Patients";
-            //this.patientsBindingSource1.DataSource = this.hospitalManagerDataSet2BindingSource;
-            // 
-            // patientsTableAdapter1
-            // 
-            //this.patientsTableAdapter1.ClearBeforeFill = true;
-            // 
-            // hospitalManagerDataSet2BindingSource1
-            // 
-            //this.hospitalManagerDataSet2BindingSource1.DataSource = this.hospitalManagerDataSet2;
-            //this.hospitalManagerDataSet2BindingSource1.Position = 0;
-            // 
-            // patientsBindingSource2
-            // 
-            //this.patientsBindingSource2.DataMember = "Patients";
-           // this.patientsBindingSource2.DataSource = this.hospitalManagerDataSet2;
-            // 
             // patientIdDataGridViewTextBoxColumn
             // 
             this.patientIdDataGridViewTextBoxColumn.DataPropertyName = "PatientId";
@@ -447,14 +405,24 @@
             this.patientsBindingSource3.DataMember = "Patients";
             this.patientsBindingSource3.DataSource = this.hospitalManagerDataSet;
             // 
+            // button_back
+            // 
+            this.button_back.Location = new System.Drawing.Point(656, 626);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(83, 30);
+            this.button_back.TabIndex = 23;
+            this.button_back.Text = "Back";
+            this.button_back.UseVisualStyleBackColor = true;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            // 
             // PatientRecords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 668);
+            this.Controls.Add(this.button_back);
             this.Controls.Add(this.dataGridView_patientRecords);
             this.Controls.Add(this.button_clear);
-            this.Controls.Add(this.button_back);
             this.Controls.Add(this.button_medicalHistory);
             this.Controls.Add(this.button_upload);
             this.Controls.Add(this.label7);
@@ -480,12 +448,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_patientRecords)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalManagerDataSet2BindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -514,7 +481,6 @@
         private HospitalManagerDataSet hospitalManagerDataSet;
         private System.Windows.Forms.BindingSource patientsBindingSource;
         private HospitalManagerDataSetTableAdapters.PatientsTableAdapter patientsTableAdapter;
-        private System.Windows.Forms.Button button_back;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn1;
@@ -537,5 +503,6 @@
         private System.Windows.Forms.BindingSource patientsBindingSource2;
         private System.Windows.Forms.BindingSource hospitalManagerDataSet2BindingSource1;
         private System.Windows.Forms.BindingSource patientsBindingSource3;
+        private System.Windows.Forms.Button button_back;
     }
 }

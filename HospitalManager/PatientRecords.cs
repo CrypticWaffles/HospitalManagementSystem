@@ -193,16 +193,16 @@ namespace HospitalManager
             this.Hide();
         }
 
-        private void button_upload_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_back_Click(object sender, EventArgs e)
         {
             HubForm mainForm = new HubForm();
             mainForm.Show();
             this.Hide();
+        }
+
+        private void button_upload_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void dataGridView_patientRecords_CellContentClick(object sender, DataGridViewCellEventArgs e)
