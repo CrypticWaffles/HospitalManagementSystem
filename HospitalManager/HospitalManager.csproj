@@ -230,6 +230,7 @@
     </Compile>
     <Compile Include="AppointmetScheduling.Designer.cs">
       <DependentUpon>AppointmetScheduling.cs</DependentUpon>
+		</Compile>
     <Compile Include="AnalyticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -307,6 +308,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MedicalInventoryManagement.resx">
       <DependentUpon>MedicalInventoryManagement.cs</DependentUpon>
+		</EmbeddedResource>
     <EmbeddedResource Include="AnalyticsForm.resx">
       <DependentUpon>AnalyticsForm.cs</DependentUpon>
     </EmbeddedResource>

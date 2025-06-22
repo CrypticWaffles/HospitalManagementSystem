@@ -74,7 +74,6 @@
             this.button_patientRecords.Text = "Patient Records";
             this.button_patientRecords.UseVisualStyleBackColor = true;
             this.button_patientRecords.Visible = false;
-            this.button_patientRecords.Click += new System.EventHandler(this.button_patientRecords_Click);
             // 
             // lbl_role
             // 

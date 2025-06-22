@@ -281,23 +281,13 @@
             this.recordDateDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.recordDateDataGridViewTextBoxColumn.Name = "recordDateDataGridViewTextBoxColumn";
             this.recordDateDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // button_back
-            // 
-            this.button_back.Location = new System.Drawing.Point(688, 542);
-            this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(83, 30);
-            this.button_back.TabIndex = 33;
-            this.button_back.Text = "Back";
-            this.button_back.UseVisualStyleBackColor = true;
-            this.button_back.Click += new System.EventHandler(this.button_back_Click);
+
             // 
             // PatientMedicalHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 584);
-            this.Controls.Add(this.button_back);
             this.Controls.Add(this.button_clear);
             this.Controls.Add(this.textBox_diagnosis);
             this.Controls.Add(this.textBox_treatment);
