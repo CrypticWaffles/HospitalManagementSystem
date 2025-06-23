@@ -31,12 +31,6 @@ namespace HospitalManager
             }
         }
 
-        // Constructor without parameter
-        public AnalyticsForm()
-        {
-            InitializeComponent();
-        }
-
         // Constructor with parameters
         public AnalyticsForm(User user, HubForm hubForm)
         {

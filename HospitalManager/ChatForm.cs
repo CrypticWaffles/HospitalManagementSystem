@@ -23,11 +23,6 @@ namespace HospitalManager
         // Reference to the HubForm
         private HubForm hubForm;
 
-        public ChatForm()
-        {
-            InitializeComponent();
-        }
-
         // Constructor that initializes the chat form with a user and a reference to the HubForm.
         public ChatForm(User user, HubForm hubForm)
         {

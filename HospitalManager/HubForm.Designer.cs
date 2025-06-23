@@ -35,6 +35,7 @@
             this.lbl_role = new System.Windows.Forms.Label();
             this.button_appointments = new System.Windows.Forms.Button();
             this.button_inventory = new System.Windows.Forms.Button();
+            this.btn_dashboard = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_hi
@@ -102,18 +103,30 @@
             // 
             this.button_inventory.Location = new System.Drawing.Point(403, 87);
             this.button_inventory.Name = "button_inventory";
-            this.button_inventory.Size = new System.Drawing.Size(186, 30);
+            this.button_inventory.Size = new System.Drawing.Size(102, 30);
             this.button_inventory.TabIndex = 6;
             this.button_inventory.Text = "Inventory";
             this.button_inventory.UseVisualStyleBackColor = true;
             this.button_inventory.Visible = false;
             this.button_inventory.Click += new System.EventHandler(this.button_inventory_Click);
             // 
+            // btn_dashboard
+            // 
+            this.btn_dashboard.Location = new System.Drawing.Point(403, 157);
+            this.btn_dashboard.Name = "btn_dashboard";
+            this.btn_dashboard.Size = new System.Drawing.Size(100, 30);
+            this.btn_dashboard.TabIndex = 7;
+            this.btn_dashboard.Text = "Dashboard";
+            this.btn_dashboard.UseVisualStyleBackColor = true;
+            this.btn_dashboard.Visible = false;
+            this.btn_dashboard.Click += new System.EventHandler(this.btn_dashboard_Click);
+            // 
             // HubForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 287);
+            this.ClientSize = new System.Drawing.Size(577, 237);
+            this.Controls.Add(this.btn_dashboard);
             this.Controls.Add(this.button_inventory);
             this.Controls.Add(this.button_appointments);
             this.Controls.Add(this.lbl_role);
@@ -137,5 +150,6 @@
         private System.Windows.Forms.Label lbl_role;
         private System.Windows.Forms.Button button_appointments;
         private System.Windows.Forms.Button button_inventory;
+        private System.Windows.Forms.Button btn_dashboard;
     }
 }

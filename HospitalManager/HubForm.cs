@@ -51,6 +51,7 @@ namespace HospitalManager
                 button_patientRecords.Visible = true;
                 button_appointments.Visible = true;
                 button_inventory.Visible = true;
+                btn_dashboard.Visible = true;
             }
         }
 
@@ -104,6 +105,13 @@ namespace HospitalManager
         {
             MedicalInventoryManagement medicalInventoryManagement = new MedicalInventoryManagement();
             medicalInventoryManagement.Show();
+            this.Hide();
+        }
+
+        private void btn_dashboard_Click(object sender, EventArgs e)
+        {
+            DashboardForm dashboardForm = new DashboardForm(this);
+            dashboardForm.Show();
             this.Hide();
         }
     }

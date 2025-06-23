@@ -109,7 +109,7 @@
             // 
             this.btn_exportJson.Location = new System.Drawing.Point(16, 514);
             this.btn_exportJson.Name = "btn_exportJson";
-            this.btn_exportJson.Size = new System.Drawing.Size(132, 30);
+            this.btn_exportJson.Size = new System.Drawing.Size(150, 30);
             this.btn_exportJson.TabIndex = 4;
             this.btn_exportJson.Text = "Export as JSON";
             this.btn_exportJson.UseVisualStyleBackColor = true;
@@ -117,7 +117,7 @@
             // 
             // btn_exportCsv
             // 
-            this.btn_exportCsv.Location = new System.Drawing.Point(154, 514);
+            this.btn_exportCsv.Location = new System.Drawing.Point(172, 514);
             this.btn_exportCsv.Name = "btn_exportCsv";
             this.btn_exportCsv.Size = new System.Drawing.Size(132, 30);
             this.btn_exportCsv.TabIndex = 4;
@@ -127,7 +127,7 @@
             // 
             // btn_exportXml
             // 
-            this.btn_exportXml.Location = new System.Drawing.Point(292, 514);
+            this.btn_exportXml.Location = new System.Drawing.Point(310, 514);
             this.btn_exportXml.Name = "btn_exportXml";
             this.btn_exportXml.Size = new System.Drawing.Size(132, 30);
             this.btn_exportXml.TabIndex = 4;
