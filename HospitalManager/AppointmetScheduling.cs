@@ -152,13 +152,13 @@ namespace HospitalManager
                 {
                     int id = UserId;
 
-                    // Finds the patient by ID
+                    // Finds the Appointment by ID
                     var appointmentsToUpdate = context.appointments.FirstOrDefault(p => p.appointmentId == AppointmentId);
 
 
                     if (appointmentsToUpdate != null)
                     {
-                        //Updates the History's properties
+                        //Updates the Appointment's properties
                         appointmentsToUpdate.userId = UserId;
                         appointmentsToUpdate.doctorName = textBox_doctorName.Text;
                         appointmentsToUpdate.doctorSpecialty = textBox_doctorSpecialty.Text;
@@ -169,7 +169,7 @@ namespace HospitalManager
                         context.SaveChanges();
                     }
                 }
-                // Clear the textboxes after updating the patient
+                // Clear the textboxes after updating the Appointment
                 button_clear_Click_1(sender, e);
             }
             catch (Exception ex)
@@ -198,7 +198,7 @@ namespace HospitalManager
             textBox_notes.Clear();
             comboBox_status.Enabled = false;
         }
-        // Class represents patients entity from the patients table in the database
+        // Class represents Appointment entity from the Appointment table in the database
         [Table("appointments")]
         public class appointments
         {
@@ -214,10 +214,10 @@ namespace HospitalManager
         }
 
 
-        // Database context for accessing patients
+        // Database context for accessing Appointment
         public class appointmentsContext : DbContext
         {
-            //Table of products
+            //Table of Appointment
             public DbSet<appointments> appointments { get; set; }
 
             // Sets the database connection string
@@ -239,7 +239,7 @@ namespace HospitalManager
                         .ToList();
 
 
-                    // Sets the datasource of the datagridview to the patients list
+                    // Sets the datasource of the datagridview to the Appointment list
                     dataGridView_appointment.DataSource = appointmentsList;
                 }
             }

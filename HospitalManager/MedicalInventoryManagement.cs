@@ -78,13 +78,13 @@ namespace HospitalManager
                 {
                     int id = ItemID;
 
-                    // Finds the patient by ID
+                    // Finds the inventory by ID
                     var inventoryToUpdate = context.MedicalInventory.FirstOrDefault(I => I.ItemID == id);
 
 
                     if (inventoryToUpdate != null)
                     {
-                        //Updates the patient's properties
+                        //Updates the inventory's properties
                         inventoryToUpdate.ItemName = textBox_name.Text;
                         inventoryToUpdate.ItemType = textBox_type.Text;
                         inventoryToUpdate.QuantityInStock = Convert.ToInt32(textBox_stock.Text);
@@ -95,7 +95,7 @@ namespace HospitalManager
                         context.SaveChanges();
                     }
                 }
-                // Clear the textboxes after updating the patient
+                // Clear the textboxes after updating the inventory
                 button_clear_Click(sender, e);
             }
             catch (Exception ex)
@@ -114,20 +114,20 @@ namespace HospitalManager
         {
             try
             {
-                // Ensure a PatientID has been selected before trying to delete
+                // Ensure a inventoryId has been selected before trying to delete
                 if (ItemID != 0)
                 {
                     using (var context = new InventoryContext())
                     {
                         int id = ItemID;
 
-                        // Finds the patient by ID
+                        // Finds the inventory by ID
                         var inventoryToDelete = context.MedicalInventory.FirstOrDefault(I => I.ItemID == id);
 
 
                         if (inventoryToDelete != null)
                         {
-                            // Remove the patient from the database
+                            // Remove the inventory from the database
                             context.MedicalInventory.Remove(inventoryToDelete);
                             context.SaveChanges();
                         }
@@ -159,7 +159,7 @@ namespace HospitalManager
             {
                 using (var context = new InventoryContext())
                 {
-                    // Get patient that match the search term (case-insensitive)
+                    // Get inventory that match the search term (case-insensitive)
                     var searchTerm = textBox_name.Text.ToLower();
                     var results = context.MedicalInventory
                         .Where(I => I.ItemName.ToLower().Contains(searchTerm)
@@ -220,10 +220,10 @@ namespace HospitalManager
             {
                 using (var context = new InventoryContext())
                 {
-                    // Gets all patients from the database
+                    // Gets all inventory from the database
                     var inventoryList = context.MedicalInventory.ToList();
 
-                    // Sets the datasource of the datagridview to the patients list
+                    // Sets the datasource of the datagridview to the inventory list
                     dataGridView_medicalInventory.DataSource = inventoryList;
                 }
             }
@@ -248,7 +248,7 @@ namespace HospitalManager
 
         }
 
-        // Database context for accessing patients
+        // Database context for accessing inventory
         public class InventoryContext : DbContext
         {
             //Table of Inventory

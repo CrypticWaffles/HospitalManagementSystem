@@ -202,7 +202,9 @@ namespace HospitalManager
 
         private void button_upload_Click(object sender, EventArgs e)
         {
-
+            upload mainForm = new upload();
+            mainForm.Show();
+            this.Hide();
         }
 
         private void dataGridView_patientRecords_CellContentClick(object sender, DataGridViewCellEventArgs e)

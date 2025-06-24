@@ -92,7 +92,7 @@ namespace HospitalManager
                 {
                     int id = HistoryId;
 
-                    // Finds the patient by ID
+                    // Finds the PatientHistory by ID
                     var historyToUpdate = context.MedicalHistories.FirstOrDefault(p => p.HistoryId == id);
 
 
@@ -108,7 +108,7 @@ namespace HospitalManager
                         context.SaveChanges();
                     }
                 }
-                // Clear the textboxes after updating the patient
+                // Clear the textboxes after updating the PatientHistory
                 button_clear_Click_1(sender, e);
             }
             catch (Exception ex)
@@ -196,7 +196,7 @@ namespace HospitalManager
                         .Where(h => h.PatientId == SelectedPatient)
                         .ToList();
 
-                    // Sets the datasource of the datagridview to the patients list
+                    // Sets the datasource of the datagridview to the PatientHistory list
                     dataGridView_medicalHistory.DataSource = historyList;
                 }
             }
@@ -206,7 +206,7 @@ namespace HospitalManager
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-        // Class represents patients entity from the patients table in the database
+        // Class represents PatientHistory entity from the PatientHistory table in the database
         [Table("MedicalHistories")]
         public class PatientHistory
         {
@@ -221,10 +221,10 @@ namespace HospitalManager
         }
 
 
-        // Database context for accessing patients
+        // Database context for accessing PatientHistory
         public class PatientHistoryContext : DbContext
         {
-            //Table of products
+            //Table of PatientHistory
             public DbSet<PatientHistory> MedicalHistories { get; set; }
 
             // Sets the database connection string
