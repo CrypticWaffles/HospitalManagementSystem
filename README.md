@@ -9,7 +9,7 @@ This repository contains a comprehensive Hospital Management System built with a
 -   **Real-Time Dashboard:** A live dashboard powered by SignalR to monitor simulated patient vitals (Heart Rate, Blood Pressure, SpO2) and hospital-wide statistics like bed occupancy and emergencies.
 -   **Live Chat:** A SignalR-based chat feature for real-time communication between users.
 -   **Analytics and Reporting:** Generate detailed reports on patient data and inventory, with options to export in JSON, CSV, and XML formats.
--   **Bulk Data Import:** Utility to import patient and medical history data from CSV and JSON files.
+-   **Bulk Data Export:** Utility to export patient and medical history data as CSV, XML, and JSON files.
 
 ## Architecture
 The system is divided into two main projects: a Windows Forms client and an ASP.NET Core server.
