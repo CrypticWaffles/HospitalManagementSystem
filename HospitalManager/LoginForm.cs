@@ -54,8 +54,23 @@ namespace HospitalManager
             // Find the user by username, then verify the password against the stored BCrypt hash.
             var user = usersCollection.Find(u => u.Username == username).FirstOrDefault();
 
+            // BCrypt.Verify throws if the stored value isn't a valid BCrypt hash (e.g. a legacy plaintext password).
+            bool passwordMatches = false;
+            if (user != null)
+            {
+                try
+                {
+                    passwordMatches = BCrypt.Net.BCrypt.Verify(password, user.Password);
+                }
+                catch (Exception)
+                {
+                    // Stored value isn't a valid BCrypt hash (e.g. a legacy plaintext password) - treat as no match.
+                    passwordMatches = false;
+                }
+            }
+
             // If the user is found and the password matches the stored hash, show a success message and close the login form.
-            if (user != null && BCrypt.Net.BCrypt.Verify(password, user.Password))
+            if (user != null && passwordMatches)
             {
                 MessageBox.Show($"Welcome {user.Username}!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HubForm hubForm = new HubForm(user);

@@ -38,6 +38,8 @@ packages/
 [Rr]elease/
 [Bb]in/
 [Oo]bj/
+bin/
+obj/
 
 # Visual Studio upgrade logs
 UpgradeLog*.htm

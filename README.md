@@ -49,7 +49,7 @@ The system is divided into two main projects: a Windows Forms client and an ASP.
 2.  **Configure Databases:**
     -   Ensure your SQL Server and MongoDB instances are running.
     -   Create a SQL Server database named `HospitalManager` and the necessary tables (`Patients`, `MedicalHistories`, `MedicalInventory`, `appointments`, `users`).
-    -   Create a MongoDB database named `HospitalManager` with a `users` collection. You can use the `HospitalManager.users.json` file as a reference for the user schema.
+    -   Create a MongoDB database named `HospitalManager` with a `users` collection.
 
 3.  **Update Connection Strings:**
     -   Open the `HospitalManager/App.config` file.
