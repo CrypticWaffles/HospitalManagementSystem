@@ -39,6 +39,9 @@ packages/
 [Bb]in/
 [Oo]bj/
 
+# Visual Studio upgrade logs
+UpgradeLog*.htm
+
 # Miscellaneous
 Thumbs.db
 ehthumbs.db

@@ -84,7 +84,7 @@ namespace HospitalManager
             User newUser = new User
             {
                 Username = username,
-                Password = password,
+                Password = BCrypt.Net.BCrypt.HashPassword(password),
                 Email = email,
                 Role = role,
                 Registered = false,

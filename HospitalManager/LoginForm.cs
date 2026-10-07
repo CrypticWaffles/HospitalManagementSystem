@@ -51,11 +51,11 @@ namespace HospitalManager
                 return;
             }
 
-            // Find the user in the database.
-            var user = usersCollection.Find(u => u.Username == username && u.Password == password).FirstOrDefault();
+            // Find the user by username, then verify the password against the stored BCrypt hash.
+            var user = usersCollection.Find(u => u.Username == username).FirstOrDefault();
 
-            // If the user is found, show a success message and close the login form.
-            if (user != null)
+            // If the user is found and the password matches the stored hash, show a success message and close the login form.
+            if (user != null && BCrypt.Net.BCrypt.Verify(password, user.Password))
             {
                 MessageBox.Show($"Welcome {user.Username}!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HubForm hubForm = new HubForm(user);
